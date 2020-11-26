@@ -1,0 +1,18 @@
+name: Perform Release
+on:
+  workflow_dispatch:
+    inputs:
+      release_version:
+        description: Release Version
+        required: true
+      snapshot_version:
+        description: Snapshot Version
+        required: true
+
+jobs:
+  maven-release:
+    name: Maven Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test Version Inputs
+        run: echo "Igor here ${{ github.event.inputs.release_version }} ${{ github.event.inputs.release_version }}"
