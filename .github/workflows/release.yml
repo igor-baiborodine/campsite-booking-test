@@ -12,7 +12,7 @@ on:
 jobs:
   maven-release:
     name: Maven Release
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - name: Test Version Inputs
         run: echo "Igor here ${{ github.event.inputs.release_version }} ${{ github.event.inputs.release_version }}"
