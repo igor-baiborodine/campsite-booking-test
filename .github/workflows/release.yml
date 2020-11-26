@@ -14,5 +14,10 @@ jobs:
     name: Maven Release
     runs-on: ubuntu-18.04
     steps:
-      - name: Test Version Inputs
-        run: echo "Igor here ${{ github.event.inputs.release_version }} ${{ github.event.inputs.release_version }}"
+      - uses: actions/checkout@v1
+      - name: Versions Input
+        run: echo "release version[${{ github.event.inputs.release_version }}], snapshot version[${{ github.event.inputs.snapshot_version }}]"
+      - name: JDK 11 Set-up
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.11
