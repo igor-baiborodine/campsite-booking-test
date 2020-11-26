@@ -19,6 +19,7 @@ jobs:
         id: tag_version
         uses: mathieudutour/github-tag-action@v5
         with:
+          custom_tag: $(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
           github_token: ${{ secrets.GITHUB_TOKEN }}
 #      - name: JDK 11 Set-up
 #        uses: actions/setup-java@v2
