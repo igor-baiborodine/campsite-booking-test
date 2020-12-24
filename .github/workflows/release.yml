@@ -20,7 +20,7 @@ jobs:
         uses: benjefferies/branch-protection-bot@master
         if: always()
         with:
-          access-token: ${{ secrets.GITHUB_TOKEN }}
+          access-token: ${{ secrets.BOT_GITHUB_REPO_ACCESS_TOKEN }}
           owner: igor-baiborodine
           enforce_admins: false
           repo: campsite-booking-test
@@ -28,7 +28,7 @@ jobs:
       - name: Perform release
         uses: qcastel/github-actions-maven-release@master
         with:
-          access-token: ${{ secrets.GITHUB_TOKEN }}
+          access-token: ${{ secrets.BOT_GITHUB_REPO_ACCESS_TOKEN }}
           git-release-bot-name: bot-campsite-booking
           git-release-bot-email: 'bot-campsite-booking@kiroule.com'
           maven-args: '-DskipTests -DskipITs'
@@ -37,6 +37,6 @@ jobs:
         uses: benjefferies/branch-protection-bot@master
         if: always()
         with:
-          access-token: ${{ secrets.GITHUB_TOKEN }}
+          access-token: ${{ secrets.BOT_GITHUB_REPO_ACCESS_TOKEN }}
           owner: igor-baiborodine
           repo: campsite-booking-test
