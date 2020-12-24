@@ -15,10 +15,28 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Perform Release
+
+      - name: Temporarily disable "include administrators" branch protection
+        uses: benjefferies/branch-protection-bot@master
+        if: always()
+        with:
+          access-token: ${{ secrets.GITHUB_TOKEN }}
+          owner: igor-baiborodine
+          enforce_admins: false
+          repo: campsite-booking-test
+
+      - name: Perform release
         uses: qcastel/github-actions-maven-release@master
         with:
+          access-token: ${{ secrets.GITHUB_TOKEN }}
           git-release-bot-name: bot-campsite-booking
           git-release-bot-email: 'bot-campsite-booking@kiroule.com'
-          access-token: ${{ secrets.GITHUB_TOKEN }}
           maven-args: '-DskipTests -DskipITs'
+
+      - name: Enable "include administrators" branch protection
+        uses: benjefferies/branch-protection-bot@master
+        if: always()
+        with:
+          access-token: ${{ secrets.GITHUB_TOKEN }}
+          owner: igor-baiborodine
+          repo: campsite-booking-test
