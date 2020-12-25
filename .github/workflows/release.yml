@@ -31,6 +31,6 @@ jobs:
           git config user.name "GitHub Actions"
 
       - name: Perform release & publish JAR
-        run: ./mvnw -B release:prepare release:perform -DreleaseVersion={{ github.event.inputs.releaseVersion }} -DskipTests -DskipITs
+        run: ./mvnw -B release:prepare release:perform "-DreleaseVersion={{ github.event.inputs.releaseVersion }} -DskipTests -DskipITs"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
