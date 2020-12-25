@@ -25,7 +25,7 @@ jobs:
 
       - name: Print environment variables
         run: printenv
-        
+
       - name: Perform release
         uses: qcastel/github-actions-maven-release@master
         with:
