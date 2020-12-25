@@ -23,6 +23,9 @@ jobs:
           server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
           settings-path: ${{ github.workspace }} # location for the settings.xml file
 
+      - name: Print environment variables
+        run: printenv
+        
       - name: Perform release
         uses: qcastel/github-actions-maven-release@master
         with:
