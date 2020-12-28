@@ -5,7 +5,9 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="entityManagerFactory" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>
@@ -137,7 +139,7 @@
     <orderEntry type="library" name="Maven: org.checkerframework:checker-qual:3.5.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.h2database:h2:1.4.200" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.16" level="project" />
-    <orderEntry type="library" name="Maven: com.google.guava:guava:30.0-jre" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:30.1-jre" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:failureaccess:1.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:3.0.2" level="project" />
