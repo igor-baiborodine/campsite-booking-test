@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY . .
 
 RUN mvn --batch-mode package -DskipTests; \
-    mv /usr/src/app/target/campsite-booking-$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout).jar \
+    mv /usr/src/app/target/campsite-booking-test-$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout).jar \
         /usr/src/app/target/app.jar
 
 ################################################################################
