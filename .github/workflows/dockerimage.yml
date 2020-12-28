@@ -1,4 +1,4 @@
-name: Perform Release
+name: Docker Image
 on:
   workflow_dispatch:
     inputs:
