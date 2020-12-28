@@ -7,6 +7,13 @@ on:
         required: true
 
 jobs:
+
+  printenv:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          printenv
+
   main:
     runs-on: ubuntu-latest
     steps:
