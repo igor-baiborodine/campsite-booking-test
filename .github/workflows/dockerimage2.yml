@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: v$IMAGE_TAG
+          ref: v${{ IMAGE_TAG }}
 
       - name: Build image
         run: |
