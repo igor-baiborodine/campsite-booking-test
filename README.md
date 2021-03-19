@@ -79,7 +79,7 @@ $ mvn clean verify
 ```
 * Run SonarCloud analysis, including test coverage, code smells, vulnerabilities, etc.:
 ```bash
-$ mvn clean verfify sonar:sonar -Dsonar.login=<SONAR_TOKEN> -Pcoverage
+$ mvn clean verify sonar:sonar -Dsonar.login=<SONAR_TOKEN> -Pcoverage
 ```
 
 #### Concurrent Bookings Creation Test
